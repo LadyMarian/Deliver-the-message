@@ -22,7 +22,7 @@ function deliverMessageKey(event) {
 	if (checkInputLength() && event.keyCode === 13) {
 		newMessage.innerHTML = input.value;
 		input.value = "";
-	} else if (checkInputLength() === false) {
+	} else if (checkInputLength() === false && event.keyCode === 13) {
 		alert("Please write a message");
 	}
 }
