@@ -9,10 +9,14 @@ function checkInputLength() {
 		return false;
 	}
 }
+
+function createMessage() {
+	newMessage.innerHTML = input.value;
+	input.value = "";
+}
 function deliverMessageClick() {
 	if (checkInputLength()) {
-		newMessage.innerHTML = input.value;
-		input.value = "";
+		createMessage();
 	} else {
 		alert("Please write a message");
 	}
@@ -20,8 +24,7 @@ function deliverMessageClick() {
 
 function deliverMessageKey(event) {
 	if (checkInputLength() && event.keyCode === 13) {
-		newMessage.innerHTML = input.value;
-		input.value = "";
+		createMessage()
 	} else if (checkInputLength() === false && event.keyCode === 13) {
 		alert("Please write a message");
 	}
